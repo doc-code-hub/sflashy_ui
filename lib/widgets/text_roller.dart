@@ -30,8 +30,6 @@ class TextRollerState extends State<TextRoller>
   late AnimationController _animationController;
   late CurvedAnimation _curvedAnimation;
 
-  bool disposed = false;
-
   int _currentIndex = 0;
 
   final timers = [];
@@ -42,15 +40,11 @@ class TextRollerState extends State<TextRoller>
         Timer(
             widget.waitDuration ?? Duration(seconds: widget.wait ?? 5),
             () => {
-                  if (_animationController.status != AnimationStatus.completed)
-                    {
-                      setState(() {
-                        _currentIndex =
-                            (_currentIndex + 1) % widget.strings.length;
-                        _animationController.reset();
-                        _animationController.forward();
-                      })
-                    }
+                  setState(() {
+                    _currentIndex = (_currentIndex + 1) % widget.strings.length;
+                    _animationController.reset();
+                    _animationController.forward();
+                  })
                 }),
       );
     }
@@ -77,7 +71,6 @@ class TextRollerState extends State<TextRoller>
   void dispose() {
     _animationController.removeStatusListener(statusListener);
     timers.map((timer) => timer.cancel());
-    disposed = true;
     _animationController.dispose();
     super.dispose();
   }
