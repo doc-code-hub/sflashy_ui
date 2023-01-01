@@ -4,7 +4,7 @@
 
 # TextRoller
 
-![Alt text](assets/TextRoller%20-%20Example.gif)
+![Alt text](https://github.com/doc-code-hub/sflashy_ui/blob/main/example/assets/TextRoller%20-%20Example.gif?raw=true)
 ### Strings merge transition in an infinite loop animation
 
 
