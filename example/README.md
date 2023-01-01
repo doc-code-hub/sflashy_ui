@@ -2,8 +2,12 @@
 
 - [TextRoller](#textroller)
 
-### TextRoller
-#### Strings merge transition in an infinite loop animation
+# TextRoller
+
+![Alt text](../assets/examples/TextRoller%20-%20Example.gif)
+
+### Strings merge transition in an infinite loop animation
+
 
 The widget shows strings in the order it receives them.
 
@@ -15,10 +19,10 @@ The widget shows strings in the order it receives them.
 ```dart
 TextRoller(
     strings: [
-        'Text Number One',
-        'Second text to display',
-        'Number 3',
-        '4',
+        'First',
+        'Second',
+        'Third',
+        'Fourth',
     ],
     style: SomeTextStyle(), // optional
     wait: 1, // same as waitDuration: Duration(seconds: 4)

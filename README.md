@@ -6,6 +6,9 @@ This is a suite of **Flutter Widgets** for specific sflashy effects.
 ## Components
 
 ### TextRoller
+
+![Alt text](./assets/examples/TextRoller%20-%20Example.gif)
+
 #### Strings merge transition in an infinite loop animation
 
 The widget shows strings in the order it receives them.
