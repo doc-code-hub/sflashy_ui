@@ -4,8 +4,7 @@
 
 # TextRoller
 
-![Alt text](../assets/examples/TextRoller%20-%20Example.gif)
-
+![Alt text](assets/TextRoller%20-%20Example.gif)
 ### Strings merge transition in an infinite loop animation
 
 
