@@ -1,10 +1,4 @@
-# 0.0.3+3
-
-Update examples structure
-# 0.0.3+2
-
-Update examples structure
-# 0.0.3+1
+# 0.0.3+4
 
 Update examples
 
