@@ -1,3 +1,7 @@
+# 0.0.5+1
+
+Refactor TextRoller, Add detailed comments for TextRoller
+
 # 0.0.4+1
 
 Update TextRoller examples
