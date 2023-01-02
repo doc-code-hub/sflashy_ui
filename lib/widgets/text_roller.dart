@@ -47,23 +47,28 @@ class TextRollerState extends State<TextRoller>
   /// Current string index
   int _currentIndex = 0;
 
+  bool disposed = false;
+
   // Timers to eventually cancel on dispose
   final timers = [];
 
   statusListener(status) {
     if (status == AnimationStatus.completed) {
-      timers.add(
-        Timer(
-          widget.waitDuration ?? Duration(seconds: widget.wait ?? 5),
-          () => {
-            setState(() {
-              _currentIndex = (_currentIndex + 1) % widget.strings.length;
-              _animationController.reset();
-              _animationController.forward();
-            })
-          },
-        ),
-      );
+      if (!disposed) {
+        timers.add(Timer(
+            widget.waitDuration ?? Duration(seconds: widget.wait ?? 5),
+            () => {
+                  if (!disposed)
+                    {
+                      setState(() {
+                        _currentIndex =
+                            (_currentIndex + 1) % widget.strings.length;
+                        _animationController.reset();
+                        _animationController.forward();
+                      })
+                    },
+                }));
+      }
     }
   }
 
@@ -89,21 +94,26 @@ class TextRollerState extends State<TextRoller>
 
     // Initial transition timer
     timers.add(Timer(widget.waitDuration ?? Duration(seconds: widget.wait ?? 5),
-        () => {_animationController.forward()}));
+        () => {if (!disposed) _animationController.forward()}));
   }
 
   @override
   void dispose() {
-    super.dispose();
+    disposed = true;
 
     // Remove animation status listener
     _animationController.removeStatusListener(statusListener);
+
+    // Stop animation controller
+    _animationController.stop();
 
     // Cancel every timer
     timers.map((timer) => timer.cancel());
 
     // Dispose animation controller
     _animationController.dispose();
+
+    super.dispose();
   }
 
   @override
