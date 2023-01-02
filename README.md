@@ -31,14 +31,3 @@ TextRoller(
 
 The widget shows strings in the order it receives them.
 
-##### Params
-
-- *`style`*: TextStyle of the Text rendered.
-
-- *`waitDuration`*: indicates how long each string remains static before being replaced with the next.  
-  `wait` can be used instead to specify seconds.
-
-- *`transitionDuration`*: indicates how long the transition between the two strings lasts, during which the text gradually merges.  
-`transition` can be used instead to specify seconds.
-
-
